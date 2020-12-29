@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BilibiliDemo</string>
+    <string name="title_home">主页</string>
+    <string name="title_channel">频道</string>
+    <string name="title_news">动态</string>
+    <string name="title_vip">会员购</string>
+    <string name="title_myself">我的</string>
+</resources>
