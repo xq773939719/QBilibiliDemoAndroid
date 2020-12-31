@@ -15,6 +15,7 @@ public class DemoActivityViewModel extends ViewModel {
         this.data.add("NavigationView");
         this.data.add("FloatingActionButton");
         this.data.add("SwipeRefreshLayout");
+        this.data.add("LearnAndroid");
     }
 
     public String getData(int index) {

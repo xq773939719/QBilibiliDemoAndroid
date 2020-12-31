@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.xq.bilibilidemo.R;
 import com.xq.bilibilidemo.activity.DemoActivity;
+import com.xq.bilibilidemo.activity.DemoActivityLearnAndroid;
 import com.xq.bilibilidemo.activity.DemoActivityOfFloatingActionButton;
 import com.xq.bilibilidemo.activity.DemoActivityOfNavigationView;
 import com.xq.bilibilidemo.activity.DemoActivityOfSwipeRefreshLayout;
@@ -71,6 +72,8 @@ public class DemoActivityListAdapter extends RecyclerView.Adapter<DemoActivityLi
                 return new Intent(context, DemoActivityOfFloatingActionButton.class);
             case "SwipeRefreshLayout":
                 return new Intent(context, DemoActivityOfSwipeRefreshLayout.class);
+            case "LearnAndroid":
+                return new Intent(context, DemoActivityLearnAndroid.class);
         }
         return null;
     }

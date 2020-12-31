@@ -36,6 +36,9 @@
         <activity
             android:name=".activity.DemoActivityOfSwipeRefreshLayout">
         </activity>
+        <activity
+            android:name=".activity.DemoActivityLearnAndroid">
+        </activity>
     </application>
 
 </manifest>

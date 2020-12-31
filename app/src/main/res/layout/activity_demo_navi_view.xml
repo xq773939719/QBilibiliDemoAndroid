@@ -24,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
+            app:headerLayout="@layout/activity_demo_navi_view_header"
             app:menu="@menu/nav_menu_list" />
     </androidx.drawerlayout.widget.DrawerLayout>
 </LinearLayout>
