@@ -22,17 +22,7 @@ public class Common {
     public static ArrayList<String> getRandomColorArray(int sum) {
         ArrayList<String> data = new ArrayList<String>();
         for(int i = 0; i< sum; ++i) {
-            Random random = new Random();
-            String R, G, B;
-            R = Integer.toHexString(random.nextInt(256)).toUpperCase();
-            G = Integer.toHexString(random.nextInt(256)).toUpperCase();
-            B = Integer.toHexString(random.nextInt(256)).toUpperCase();
-
-            R = R.length() == 1 ? "0" + R : R;
-            G = G.length() == 1 ? "0" + G : G;
-            B = B.length() == 1 ? "0" + B : B;
-
-            data.add("#" + R + G + B);
+            data.add(getRandomColor());
         }
         return data;
     }
