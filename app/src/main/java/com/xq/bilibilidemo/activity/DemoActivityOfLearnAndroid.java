@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +16,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.xq.bilibilidemo.R;
 import com.xq.bilibilidemo.common.Keyboard;
 
-public class DemoActivityLearnAndroid extends AppCompatActivity {
+public class DemoActivityOfLearnAndroid extends AppCompatActivity {
 
     private boolean keyboardIsShow = false;
     private Keyboard keyboard;
@@ -30,6 +31,14 @@ public class DemoActivityLearnAndroid extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 clickButton(fab);
+            }
+        });
+
+        final EditText editText = findViewById(R.id.test_edit_text);
+        editText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("XQXQ", "onClick: XQXQ");
             }
         });
 
