@@ -41,8 +41,8 @@ public class DemoActivityOfLocalStorage extends AppCompatActivity {
         LocalStorage, // 文件缓存，默认存储路径：/data/data/<PackageName>/files
         SharedPreferences, // 存储键值对，默认存储路径：/data/data/<PackageName>/shared_prefs
         SQLite, // 本地数据库，默认存储路径：/data/data/<PackageName>/databases
-        ContentProvider, // ContentProvider主要用于不同的程序之间实现数据共享的功能。
-        Network, // 后台存储
+//        ContentProvider, // ContentProvider主要用于不同的程序之间实现数据共享的功能。
+//        Network, // 后台存储
     }
 
 
@@ -208,16 +208,16 @@ public class DemoActivityOfLocalStorage extends AppCompatActivity {
                 values.put("author", editText.getText().toString());
                 sqLiteDatabase.update("Book", values, "name= ?", new String[]{"Book Name"});
                 break;
-            case ContentProvider:
-                ContentResolver resolver = this.getContentResolver();
-                Uri uri = Uri.parse("content://com.xq.bilibilidemo");
-                values = new ContentValues();
-                values.put("author", editText.getText().toString());
-                resolver.update(uri, values, "name= ?", new String[]{"Book Name"});
-                break;
-            case Network:
-                // 可发送Post请求修改后台数据
-                break;
+//            case ContentProvider:
+//                ContentResolver resolver = this.getContentResolver();
+//                Uri uri = Uri.parse("content://com.xq.bilibilidemo");
+//                values = new ContentValues();
+//                values.put("author", editText.getText().toString());
+//                resolver.update(uri, values, "name= ?", new String[]{"Book Name"});
+//                break;
+//            case Network:
+//                // 可发送Post请求修改后台数据
+//                break;
         }
 
     }
@@ -265,22 +265,22 @@ public class DemoActivityOfLocalStorage extends AppCompatActivity {
                 }
                 cursor.close();
                 break;
-            case ContentProvider:
-                ContentResolver resolver = this.getContentResolver();
-                Uri uri = Uri.parse("content://com.xq.bilibilidemo");
-                Cursor c = resolver.query(uri, null, null, null, null);
-                if (c.moveToFirst()) {
-                    for (int i = 0; i < c.getCount(); i++) {
-                        int index = c.getColumnIndexOrThrow("author");
-                        String src = c.getString(index);
-                        textView.setText(src);
-                        c.moveToNext();
-                    }
-                }
-                break;
-            case Network:
-                // 可发送get请求获取后台数据
-                break;
+//            case ContentProvider:
+//                ContentResolver resolver = this.getContentResolver();
+//                Uri uri = Uri.parse("content://com.xq.bilibilidemo");
+//                Cursor c = resolver.query(uri, null, null, null, null);
+//                if (c.moveToFirst()) {
+//                    for (int i = 0; i < c.getCount(); i++) {
+//                        int index = c.getColumnIndexOrThrow("author");
+//                        String src = c.getString(index);
+//                        textView.setText(src);
+//                        c.moveToNext();
+//                    }
+//                }
+//                break;
+//            case Network:
+//                // 可发送get请求获取后台数据
+//                break;
         }
 
     }
