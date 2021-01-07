@@ -90,7 +90,6 @@ public class DemoActivityOfLocalStorage extends AppCompatActivity {
         setContentView(R.layout.activity_demo_local_storage);
         editText = findViewById(R.id.add_data_to_file);
         textView = findViewById(R.id.read_data_from_file);
-        textView.setHint("默认文字");
         button = findViewById(R.id.read_data_button);
         sqlDataBaseHelper = new SQLDataBaseHelper(this, "test.db", null, 2);
         setEditText();
@@ -123,6 +122,7 @@ public class DemoActivityOfLocalStorage extends AppCompatActivity {
 
     private void setButton() {
         Button button = findViewById(R.id.change_storage_type);
+        button.setText("存储方式-" + storageType.toString());
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -130,6 +130,45 @@ public class DemoActivityOfLocalStorage extends AppCompatActivity {
                 StorageType cur = values[index++ % values.length];
                 storageType = cur;
                 button.setText("存储方式-" + storageType.toString());
+            }
+        });
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                String data = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
+                        "<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n" +
+                        "                android:layout_width=\"match_parent\"\n" +
+                        "                android:layout_height=\"match_parent\">\n" +
+                        "\n" +
+                        "    <TextView\n" +
+                        "                android:layout_width=\"match_parent\"\n" +
+                        "                android:layout_height=\"match_parent\"\n" +
+                        "                android:text=\"本地文件加载测试\"\n" +
+                        "                android:gravity=\"center\"\n" +
+                        "                android:textSize=\"36sp\" />\n" +
+                        "</LinearLayout>";
+                FileOutputStream out = null;
+                BufferedWriter writer = null;
+                try {
+                    out = openFileOutput("XMLFile.xml", MODE_PRIVATE);
+                    writer = new BufferedWriter(new OutputStreamWriter(out));
+                    writer.write(data);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        if (writer != null) {
+                            writer.flush();
+                            writer.close();
+                            Intent intent = new Intent(v.getContext(), DemoActivityOfXMLFileLayout.class);
+                            startActivity(intent);
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                return true;
             }
         });
     }
