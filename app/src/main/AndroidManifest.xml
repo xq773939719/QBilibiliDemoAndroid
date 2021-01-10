@@ -9,9 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BilibiliDemo">
-<!--        <provider-->
-<!--            android:authorities="com.xq.bilibilidemo"-->
-<!--            android:name=".contentProvider.BilibiliContentProvider"/>-->
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name">
@@ -40,13 +37,7 @@
             android:name=".activity.DemoActivityOfSwipeRefreshLayout">
         </activity>
         <activity
-            android:name=".activity.DemoActivityOfLearnAndroid">
-        </activity>
-        <activity
-            android:name=".activity.DemoActivityOfLocalStorage">
-        </activity>
-        <activity
-            android:name=".activity.DemoActivityOfXMLFileLayout">
+            android:name=".activity.DemoActivityLearnAndroid">
         </activity>
     </application>
 
