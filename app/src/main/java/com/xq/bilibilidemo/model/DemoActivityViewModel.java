@@ -11,6 +11,7 @@ public class DemoActivityViewModel extends ViewModel {
 
     public DemoActivityViewModel() {
         data = new ArrayList<String>();
+        data = new ArrayList<String>();
         this.data.add("Media");
         this.data.add("ijkPlayer");
         this.data.add("ToolBar");
@@ -18,8 +19,6 @@ public class DemoActivityViewModel extends ViewModel {
         this.data.add("FloatingActionButton");
         this.data.add("SwipeRefreshLayout");
         this.data.add("LearnAndroid");
-
-
     }
 
     public String getData(int index) {
