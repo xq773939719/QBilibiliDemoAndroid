@@ -8,14 +8,14 @@ import android.widget.LinearLayout;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.xq.bilibilidemo.R;
 import com.xq.bilibilidemo.common.Keyboard;
 
-public class DemoActivityLearnAndroid extends AppCompatActivity {
+public class DemoActivityOfLearnAndroid extends AppCompatActivity {
 
     private boolean keyboardIsShow = false;
     private Keyboard keyboard;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +43,6 @@ public class DemoActivityLearnAndroid extends AppCompatActivity {
 //                clickButton();
 //            }
 //        });
-
 
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);//黑色

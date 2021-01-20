@@ -11,11 +11,15 @@ public class DemoActivityViewModel extends ViewModel {
 
     public DemoActivityViewModel() {
         data = new ArrayList<String>();
+        this.data.add("Media");
+        this.data.add("ijkPlayer");
         this.data.add("ToolBar");
         this.data.add("NavigationView");
         this.data.add("FloatingActionButton");
         this.data.add("SwipeRefreshLayout");
         this.data.add("LearnAndroid");
+
+
     }
 
     public String getData(int index) {

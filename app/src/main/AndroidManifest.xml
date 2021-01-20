@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BilibiliDemo">
+        <activity android:name=".activity.DemoActivityOfIJKPlayer"></activity>
+        <activity android:name=".activity.DemoActivityOfMedia" />
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name">
@@ -18,27 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activity.OtherActivity">
-        </activity>
-        <activity
-            android:name=".activity.DemoActivity">
-        </activity>
-        <activity
-            android:name=".activity.DemoActivityOfToolBar">
-        </activity>
-        <activity
-            android:name=".activity.DemoActivityOfNavigationView">
-        </activity>
-        <activity
-            android:name=".activity.DemoActivityOfFloatingActionButton">
-        </activity>
-        <activity
-            android:name=".activity.DemoActivityOfSwipeRefreshLayout">
-        </activity>
-        <activity
-            android:name=".activity.DemoActivityLearnAndroid">
-        </activity>
+        <activity android:name=".activity.OtherActivity" />
+        <activity android:name=".activity.DemoActivity" />
+        <activity android:name=".activity.DemoActivityOfToolBar" />
+        <activity android:name=".activity.DemoActivityOfNavigationView" />
+        <activity android:name=".activity.DemoActivityOfFloatingActionButton" />
+        <activity android:name=".activity.DemoActivityOfSwipeRefreshLayout" />
+        <activity android:name=".activity.DemoActivityOfLearnAndroid" />
     </application>
 
 </manifest>
