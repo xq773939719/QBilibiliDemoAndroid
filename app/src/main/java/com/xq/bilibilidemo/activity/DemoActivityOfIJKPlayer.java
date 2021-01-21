@@ -10,6 +10,7 @@ import com.xq.bilibilidemo.R;
 import com.xq.bilibilidemo.view.CustomPlayerWithIJKPlayer;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 
@@ -28,13 +29,20 @@ public class DemoActivityOfIJKPlayer extends AppCompatActivity implements Custom
 
         videoPlayer.setVideoListener(this);
 
-        videoPlayer.setPath("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4");
+        videoPlayer.setPath("http://vfx.mtime.cn/Video/2019/02/04/mp4/190204084208765161.mp4");
         try {
             videoPlayer.load();
         } catch (IOException e) {
             Toast.makeText(this, "播放失败", Toast.LENGTH_SHORT);
             e.printStackTrace();
         }
+        videoPlayer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (videoPlayer.isPlaying()) videoPlayer.pause();
+                else videoPlayer.start();
+            }
+        });
 
     }
 
@@ -71,5 +79,12 @@ public class DemoActivityOfIJKPlayer extends AppCompatActivity implements Custom
     @Override
     public void onVideoSizeChanged(IMediaPlayer iMediaPlayer, int i, int i1, int i2, int i3) {
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        videoPlayer.stop();
+        videoPlayer.release();
     }
 }
