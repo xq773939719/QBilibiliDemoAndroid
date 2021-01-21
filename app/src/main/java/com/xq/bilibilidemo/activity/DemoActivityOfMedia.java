@@ -163,6 +163,14 @@ public class DemoActivityOfMedia extends AppCompatActivity {
                 selectMediaUtil.select(self, SelectMediaUtil.SelectType.image);
             }
         });
+        imageView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Intent intent = new Intent(self, DemoActivityOfImageCustom.class);
+                self.startActivity(intent);
+                return true;
+            }
+        });
     }
 
     @Override
